@@ -568,6 +568,15 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_8_2_assainissement_des_données">8.2 Assainissement des Données</a></li>
 </ul>
 </li>
+<li><a href="#_9_exercices">9 Exercices</a>
+<ul class="sectlevel2">
+<li><a href="#_9_1_ecrire_la_page_de_connexion_à_la_base_de_données_avec_php_et_pdo">9.1 Ecrire la page de connexion à la base de données avec PHP et PDO</a></li>
+<li><a href="#_9_2_ecrire_le_code_pour_récupérer_toutes_les_formations_dans_le_tableau_formations">9.2 Ecrire le code pour récupérer toutes les formations dans le tableau $formations</a></li>
+<li><a href="#_9_3_ecrire_le_code_pour_ajouter_une_demande_de_formation_le_salarié_concerné_a_pour_matricule_9011_et_le_code_formation_est_devweb002">9.3 Ecrire le code pour ajouter une demande de formation. Le salarié concerné a pour matricule <code>9011</code> et le code formation est <code>DEVWEB002</code>.</a></li>
+<li><a href="#_9_4_ecrire_le_code_pour_mettre_à_jour_la_demande_de_formation_du_matricule_9011_le_superviseur_a_donné_un_avis_favorable">9.4 Ecrire le code pour mettre à jour la demande de formation du matricule 9011. Le superviseur a donné un avis favorable.</a></li>
+<li><a href="#_9_5_ecrire_le_code_pour_supprimer_la_demande_de_formation_devcsharp_du_matricule_5011_celui_ci_souhaite_se_rétracter">9.5 Ecrire le code pour supprimer la demande de formation <code>DEVCSHARP</code> du matricule <code>5011</code>. Celui-ci souhaite se rétracter.</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1114,10 +1123,159 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_9_exercices">9 Exercices</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Soit la base de données nommée <code>formation</code> stockée sur le serveur <code>bdd.domelec.com</code>.<br>
+Pour accéder à la base de données, vous avez le login <code>domAppli</code> et le mot de passe <code>D0m€lec@1998!</code>.</p>
+</div>
+<div class="paragraph">
+<p>Voici le MCD de la base de données :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="MCD.JPG" alt="MCD">
+</div>
+</div>
+<div class="sect2">
+<h3 id="_9_1_ecrire_la_page_de_connexion_à_la_base_de_données_avec_php_et_pdo">9.1 Ecrire la page de connexion à la base de données avec PHP et PDO</h3>
+<div class="paragraph">
+<p>Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="PHP"><span class="inline-delimiter">&lt;?php</span>
+<span class="keyword">try</span> {
+
+
+
+
+
+
+
+
+
+} <span class="keyword">catch</span> (<span class="constant">PDOException</span> <span class="local-variable">$e</span>) {
+
+
+}
+<span class="inline-delimiter">?&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_9_2_ecrire_le_code_pour_récupérer_toutes_les_formations_dans_le_tableau_formations">9.2 Ecrire le code pour récupérer toutes les formations dans le tableau $formations</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="PHP"><span class="inline-delimiter">&lt;?php</span>
+
+
+
+
+
+
+
+
+
+
+<span class="comment">//Affichage des formations à l'écran</span>
+<span class="predefined">print_r</span>(<span class="local-variable">$formations</span>);
+<span class="inline-delimiter">?&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_9_3_ecrire_le_code_pour_ajouter_une_demande_de_formation_le_salarié_concerné_a_pour_matricule_9011_et_le_code_formation_est_devweb002">9.3 Ecrire le code pour ajouter une demande de formation. Le salarié concerné a pour matricule <code>9011</code> et le code formation est <code>DEVWEB002</code>.</h3>
+<div class="paragraph">
+<p>Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="PHP"><span class="inline-delimiter">&lt;?php</span>
+<span class="local-variable">$maticule</span> =<span class="integer">9011</span>;
+<span class="local-variable">$codeFormation</span> =<span class="string"><span class="delimiter">'</span><span class="content">DEVWEB002</span><span class="delimiter">'</span></span>;
+
+<span class="local-variable">$sql</span> =
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="inline-delimiter">?&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_9_4_ecrire_le_code_pour_mettre_à_jour_la_demande_de_formation_du_matricule_9011_le_superviseur_a_donné_un_avis_favorable">9.4 Ecrire le code pour mettre à jour la demande de formation du matricule 9011. Le superviseur a donné un avis favorable.</h3>
+<div class="paragraph">
+<p>Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="PHP"><span class="inline-delimiter">&lt;?php</span>
+<span class="local-variable">$maticule</span> =<span class="integer">9011</span>;
+<span class="local-variable">$codeFormation</span> =<span class="string"><span class="delimiter">'</span><span class="content">DEVWEB002</span><span class="delimiter">'</span></span>;
+
+<span class="local-variable">$sql</span> =
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="inline-delimiter">?&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_9_5_ecrire_le_code_pour_supprimer_la_demande_de_formation_devcsharp_du_matricule_5011_celui_ci_souhaite_se_rétracter">9.5 Ecrire le code pour supprimer la demande de formation <code>DEVCSHARP</code> du matricule <code>5011</code>. Celui-ci souhaite se rétracter.</h3>
+<div class="paragraph">
+<p>Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="PHP"><span class="inline-delimiter">&lt;?php</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="inline-delimiter">?&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-18 21:37:06 +0200
+Last updated 2024-09-22 10:41:28 +0200
 </div>
 </div>
 </body>
