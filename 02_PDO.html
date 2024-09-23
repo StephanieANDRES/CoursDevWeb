@@ -1116,7 +1116,8 @@ extension=pdo_pgsql</code></pre>
 <pre class="CodeRay highlight"><code data-lang="php"><span class="local-variable">$nom</span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;script&gt;alert('tintin')&lt;/script&gt;</span><span class="delimiter">&quot;</span></span>;
 <span class="predefined">echo</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Nom: </span><span class="delimiter">&quot;</span></span> . <span class="local-variable">$nom</span>; <span class="comment">//Le javascript est exécuté à l'affichage de la variable</span>
 
-<span class="local-variable">$nom</span> = <span class="predefined">htmlspecialchars</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;script&gt;alert('tintin')&lt;/script&gt;</span><span class="delimiter">&quot;</span></span>); <span class="comment">//Renvoie la chaîne transformée, le code Javascript ne s'execute pas.</span></code></pre>
+<span class="local-variable">$nom</span> = <span class="predefined">htmlspecialchars</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;script&gt;alert('tintin')&lt;/script&gt;</span><span class="delimiter">&quot;</span></span>);
+<span class="predefined">echo</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Nom: </span><span class="delimiter">&quot;</span></span> . <span class="local-variable">$nom</span>; <span class="comment">//Renvoie la chaîne transformée, le code Javascript ne s'execute pas.</span></code></pre>
 </div>
 </div>
 </div>
@@ -1274,7 +1275,7 @@ Pour accéder à la base de données, vous avez le login <code>domAppli</code> e
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-23 15:13:59 +0200
+Last updated 2024-09-23 15:19:58 +0200
 </div>
 </div>
 </body>
