@@ -831,9 +831,6 @@ extension=pdo_pgsql</code></pre>
 <span class="local-variable">$stmt</span> = <span class="local-variable">$pdo</span>-&gt;prepare(<span class="local-variable">$sql</span>);
 <span class="local-variable">$stmt</span>-&gt;execute([<span class="string"><span class="delimiter">'</span><span class="content">:id</span><span class="delimiter">'</span></span> =&gt; <span class="local-variable">$id</span>]);
 
-<span class="comment">//Execution de la requête</span>
-<span class="local-variable">$stmt</span>-&gt;execute();
-
 <span class="local-variable">$utilisateur</span> = <span class="local-variable">$stmt</span>-&gt;fetch(<span class="constant">PDO</span>::<span class="constant">FETCH_ASSOC</span>);
 <span class="predefined">print_r</span>(<span class="local-variable">$utilisateur</span>);</code></pre>
 </div>
@@ -966,7 +963,7 @@ extension=pdo_pgsql</code></pre>
 <p>Ils ont découvert que certaines parties des formulaires d&#8217;entrée des utilisateurs sur le site web de Telerik ne géraient pas correctement l&#8217;échappement des entrées. Les requêtes SQL construisaient des chaînes dynamiques en utilisant ces entrées sans échappement.</p>
 </div>
 <div class="paragraph">
-<p>Les attaquants ont injecté des chaînes malveillantes dans les champs de saisie utilisateur. Par exemple, en entrant une chaîne comme <code>‘ OR ‘1’=‘1</code> dans un champ de connexion, la requête SQL était modifiée comme suit :</p>
+<p>Les attaquants ont injecté des chaînes malveillantes dans les champs de saisie utilisateur. Par exemple, en entrant une chaîne comme <code>\' OR \'1\'=\'1\'</code> dans un champ de connexion, la requête SQL était modifiée comme suit :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1116,8 +1113,10 @@ extension=pdo_pgsql</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="php"><span class="local-variable">$nom</span> = <span class="predefined">htmlspecialchars</span>(<span class="predefined">$_POST</span>[<span class="string"><span class="delimiter">'</span><span class="content">nom</span><span class="delimiter">'</span></span>], <span class="predefined-constant">ENT_QUOTES</span>, <span class="string"><span class="delimiter">'</span><span class="content">UTF-8</span><span class="delimiter">'</span></span>);
-<span class="predefined">echo</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Nom: </span><span class="delimiter">&quot;</span></span> . <span class="local-variable">$nom</span>;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="php"><span class="local-variable">$nom</span> = <span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;script&gt;alert('tintin')&lt;/script&gt;</span><span class="delimiter">&quot;</span></span>;
+<span class="predefined">echo</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Nom: </span><span class="delimiter">&quot;</span></span> . <span class="local-variable">$nom</span>; <span class="comment">//Le javascript est exécuté à l'affichage de la variable</span>
+
+<span class="local-variable">$nom</span> = <span class="predefined">htmlspecialchars</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">&lt;script&gt;alert('tintin')&lt;/script&gt;</span><span class="delimiter">&quot;</span></span>); <span class="comment">//Renvoie la chaîne transformée, le code Javascript ne s'execute pas.</span></code></pre>
 </div>
 </div>
 </div>
@@ -1275,7 +1274,7 @@ Pour accéder à la base de données, vous avez le login <code>domAppli</code> e
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-22 10:41:28 +0200
+Last updated 2024-09-23 15:13:59 +0200
 </div>
 </div>
 </body>
