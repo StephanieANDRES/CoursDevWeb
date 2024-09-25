@@ -1095,6 +1095,7 @@ extension=pdo_pgsql</code></pre>
 <pre class="CodeRay highlight"><code data-lang="php"><span class="local-variable">$email</span> = filter_input(<span class="constant">INPUT_POST</span>, <span class="string"><span class="delimiter">'</span><span class="content">email</span><span class="delimiter">'</span></span>, <span class="constant">FILTER_VALIDATE_EMAIL</span>);
 <span class="keyword">if</span> (<span class="local-variable">$email</span> === <span class="predefined-constant">false</span>) {
     <span class="predefined">echo</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">Adresse e-mail invalide!</span><span class="delimiter">&quot;</span></span>;
+}
 
 <span class="local-variable">$id</span> = filter_input(<span class="constant">INPUT_GET</span>, <span class="string"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>, <span class="constant">FILTER_VALIDATE_INT</span>);
 <span class="keyword">if</span> (<span class="local-variable">$id</span> === <span class="predefined-constant">false</span>) {
@@ -1282,7 +1283,7 @@ Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-23 15:29:28 +0200
+Last updated 2024-09-25 16:48:24 +0200
 </div>
 </div>
 </body>
