@@ -554,25 +554,25 @@ pre.rouge .gs {
 <div id="toc" class="toc2">
 <div id="toctitle">Table des Matières</div>
 <ul class="sectlevel1">
-<li><a href="#_définition_dune_fonction">Définition d’une fonction</a></li>
-<li><a href="#_les_paramètres_et_le_passage_par_valeur">Les paramètres et le passage par valeur</a></li>
-<li><a href="#_passage_par_référence">Passage par référence</a></li>
-<li><a href="#_les_valeurs_par_défaut">Les valeurs par défaut</a></li>
-<li><a href="#_fonctions_anonymes_ou_closures">Fonctions anonymes (ou closures)</a></li>
-<li><a href="#_les_types_de_retour">Les types de retour</a></li>
-<li><a href="#_la_récursivité">La récursivité</a></li>
-<li><a href="#_les_fonctions_dordre_supérieur">Les fonctions d&#8217;ordre supérieur</a></li>
-<li><a href="#_les_arguments_variables_variadic_functions">Les arguments variables (variadic functions)</a></li>
-<li><a href="#_les_fonctions_génératrices">Les fonctions génératrices</a></li>
-<li><a href="#_les_namespaces_pour_les_fonctions">Les namespaces pour les fonctions</a></li>
-<li><a href="#_les_fonctions_fléchées">Les fonctions fléchées</a></li>
-<li><a href="#_conclusion">Conclusion</a></li>
+<li><a href="#_définition_dune_fonction">1. Définition d’une fonction</a></li>
+<li><a href="#_les_paramètres_et_le_passage_par_valeur">2. Les paramètres et le passage par valeur</a></li>
+<li><a href="#_passage_par_référence">3. Passage par référence</a></li>
+<li><a href="#_les_valeurs_par_défaut">4. Les valeurs par défaut</a></li>
+<li><a href="#_fonctions_anonymes_ou_closures">5. Fonctions anonymes (ou closures)</a></li>
+<li><a href="#_les_types_de_retour">6. Les types de retour</a></li>
+<li><a href="#_la_récursivité">7. La récursivité</a></li>
+<li><a href="#_les_fonctions_dordre_supérieur">8. Les fonctions d&#8217;ordre supérieur</a></li>
+<li><a href="#_les_arguments_variables_variadic_functions">9. Les arguments variables (variadic functions)</a></li>
+<li><a href="#_les_fonctions_génératrices">10. Les fonctions génératrices</a></li>
+<li><a href="#_les_namespaces_pour_les_fonctions">11. Les namespaces pour les fonctions</a></li>
+<li><a href="#_les_fonctions_fléchées">12. Les fonctions fléchées</a></li>
+<li><a href="#_conclusion">13. Conclusion</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_définition_dune_fonction">Définition d’une fonction</h2>
+<h2 id="_définition_dune_fonction">1. Définition d’une fonction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Une fonction est un bloc de code réutilisable qui peut être appelé à tout moment pour exécuter une tâche spécifique. Les fonctions permettent de réduire la duplication de code, d’améliorer la lisibilité et d&#8217;organiser la logique de programmation.</p>
@@ -589,7 +589,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_paramètres_et_le_passage_par_valeur">Les paramètres et le passage par valeur</h2>
+<h2 id="_les_paramètres_et_le_passage_par_valeur">2. Les paramètres et le passage par valeur</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les paramètres d&#8217;une fonction en PHP sont, par défaut, transmis par valeur. Cela signifie que toute modification des paramètres dans la fonction ne les affectera pas en dehors de celle-ci.</p>
@@ -609,7 +609,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_passage_par_référence">Passage par référence</h2>
+<h2 id="_passage_par_référence">3. Passage par référence</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Pour qu&#8217;une fonction modifie la valeur originale de l&#8217;argument, vous devez passer cet argument par référence, en ajoutant un <code>&amp;</code> avant le nom du paramètre.</p>
@@ -631,7 +631,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_valeurs_par_défaut">Les valeurs par défaut</h2>
+<h2 id="_les_valeurs_par_défaut">4. Les valeurs par défaut</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les fonctions PHP permettent de définir des valeurs par défaut pour les paramètres. Si aucun argument n&#8217;est passé lors de l&#8217;appel de la fonction, ces valeurs par défaut seront utilisées.</p>
@@ -652,7 +652,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_fonctions_anonymes_ou_closures">Fonctions anonymes (ou closures)</h2>
+<h2 id="_fonctions_anonymes_ou_closures">5. Fonctions anonymes (ou closures)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les fonctions anonymes sont des fonctions sans nom. Elles sont souvent utilisées pour des tâches de rappel (callbacks) ou lorsqu&#8217;une fonction est nécessaire une seule fois.</p>
@@ -688,7 +688,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_types_de_retour">Les types de retour</h2>
+<h2 id="_les_types_de_retour">6. Les types de retour</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Depuis PHP 7, vous pouvez déclarer des types de retour pour les fonctions. Cela garantit que la fonction renverra un type spécifique.</p>
@@ -718,7 +718,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_la_récursivité">La récursivité</h2>
+<h2 id="_la_récursivité">7. La récursivité</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>La récursivité est une technique où une fonction s&#8217;appelle elle-même pour résoudre un problème en plusieurs étapes. Elle est souvent utilisée pour des algorithmes comme le calcul de la factorielle ou la recherche dans des structures arborescentes.</p>
@@ -773,7 +773,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_fonctions_dordre_supérieur">Les fonctions d&#8217;ordre supérieur</h2>
+<h2 id="_les_fonctions_dordre_supérieur">8. Les fonctions d&#8217;ordre supérieur</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Une fonction d&#8217;ordre supérieur est une fonction qui accepte une autre fonction en argument ou renvoie une fonction en tant que résultat.</p>
@@ -801,7 +801,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_arguments_variables_variadic_functions">Les arguments variables (variadic functions)</h2>
+<h2 id="_les_arguments_variables_variadic_functions">9. Les arguments variables (variadic functions)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Une fonction peut accepter un nombre indéfini d&#8217;arguments grâce à l&#8217;opérateur <code>&#8230;&#8203;</code>. Cela permet de passer plusieurs arguments sans les définir à l&#8217;avance dans la signature de la fonction.</p>
@@ -821,7 +821,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_fonctions_génératrices">Les fonctions génératrices</h2>
+<h2 id="_les_fonctions_génératrices">10. Les fonctions génératrices</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les générateurs en PHP permettent de créer des itérateurs facilement grâce au mot-clé <code>yield</code>. Ils sont utiles pour travailler avec des ensembles de données volumineux sans consommer beaucoup de mémoire.</p>
@@ -876,7 +876,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_namespaces_pour_les_fonctions">Les namespaces pour les fonctions</h2>
+<h2 id="_les_namespaces_pour_les_fonctions">11. Les namespaces pour les fonctions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Pour éviter les conflits de nommage dans des projets plus importants, il est possible de définir des namespaces (espaces de noms). Cela permet d&#8217;organiser votre code en modules distincts.</p>
@@ -898,7 +898,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_fonctions_fléchées">Les fonctions fléchées</h2>
+<h2 id="_les_fonctions_fléchées">12. Les fonctions fléchées</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Introduites dans PHP 7.4, les <strong>fonctions fléchées</strong> sont une syntaxe simplifiée pour créer des fonctions anonymes. Elles permettent d&#8217;accéder automatiquement aux variables externes sans <code>use</code>.</p>
@@ -917,7 +917,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_conclusion">Conclusion</h2>
+<h2 id="_conclusion">13. Conclusion</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les fonctions offrent plusieurs avantages clés.</p>
@@ -939,7 +939,7 @@ pre.rouge .gs {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-05 20:28:09 +0200
+Last updated 2024-10-05 20:45:00 +0200
 </div>
 </div>
 </body>
