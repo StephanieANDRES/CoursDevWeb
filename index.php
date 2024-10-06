@@ -58,7 +58,8 @@ if (!in_array($page, $files)) {
         }
 
         .navbar a:hover {
-            background-color: #575757;
+            background-color: #FFF;
+            color: #ba3925;
         }
 
         .content {

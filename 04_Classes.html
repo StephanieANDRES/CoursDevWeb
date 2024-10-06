@@ -554,28 +554,36 @@ pre.rouge .gs {
 <div id="toc" class="toc2">
 <div id="toctitle">Table des Matières</div>
 <ul class="sectlevel1">
-<li><a href="#_1_définition_dune_classe">1. Définition d&#8217;une classe</a></li>
-<li><a href="#_2_création_dun_objet">2. Création d’un objet</a></li>
-<li><a href="#_3_héritage">3. Héritage</a></li>
-<li><a href="#_4_encapsulation">4. Encapsulation</a></li>
-<li><a href="#_5_la_représentation_uml">5. La représentation UML</a>
+<li><a href="#_définition_dune_classe">1. Définition d&#8217;une classe</a></li>
+<li><a href="#_création_dun_objet">2. Création d’un objet</a></li>
+<li><a href="#_héritage">3. Héritage</a></li>
+<li><a href="#_encapsulation">4. Encapsulation</a></li>
+<li><a href="#_la_représentation_uml">5. La représentation UML</a>
 <ul class="sectlevel2">
-<li><a href="#_5_1_diagramme_de_classes">5.1 Diagramme de classes</a></li>
+<li><a href="#_diagramme_de_classes">5.1. Diagramme de classes</a></li>
+<li><a href="#_autre_exemple">5.2. Autre Exemple</a></li>
+<li><a href="#_exercices">5.3. Exercices</a></li>
 </ul>
 </li>
-<li><a href="#_6_autre_exemple">6. Autre Exemple</a>
+<li><a href="#_polymorphisme">6. Polymorphisme</a></li>
+<li><a href="#_interfaces">7. Interfaces</a></li>
+<li><a href="#_abstraction">8. Abstraction</a></li>
+<li><a href="#_classe_abstraite_vs_interface">9. Classe abstraite VS Interface</a></li>
+<li><a href="#_les_statiques_en_php">10. Les Statiques en PHP</a>
 <ul class="sectlevel2">
-<li><a href="#_6_1_les_classes">6.1 Les classes</a></li>
-<li><a href="#_6_2_création_dobjets_dans_une_page">6.2 Création d&#8217;objets dans une page</a></li>
-<li><a href="#_6_3_exercices">6.3 Exercices</a></li>
+<li><a href="#_propriétés_statiques">10.1. Propriétés Statiques</a></li>
+<li><a href="#_méthodes_statiques">10.2. Méthodes Statiques</a></li>
 </ul>
 </li>
+<li><a href="#_trait_spécifique_à_php">11. Trait (Spécifique à PHP)</a></li>
+<li><a href="#_gestion_des_exceptions">12. Gestion des exceptions</a></li>
+<li><a href="#_glossaire">13. Glossaire</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_1_définition_dune_classe">1. Définition d&#8217;une classe</h2>
+<h2 id="_définition_dune_classe">1. Définition d&#8217;une classe</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Une classe est un modèle pour créer des objets. Elle regroupe des <strong>propriétés</strong> (variables) et des <strong>méthodes</strong> (fonctions) qui décrivent un objet.</p>
@@ -618,7 +626,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_2_création_dun_objet">2. Création d’un objet</h2>
+<h2 id="_création_dun_objet">2. Création d’un objet</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Un objet est une instance d&#8217;une classe. On peut créer autant d&#8217;objets qu’on le souhaite à partir d’une classe.</p>
@@ -647,7 +655,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_3_héritage">3. Héritage</h2>
+<h2 id="_héritage">3. Héritage</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>L’héritage permet à une classe de récupérer les propriétés et méthodes d’une autre classe.</p>
@@ -683,7 +691,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_4_encapsulation">4. Encapsulation</h2>
+<h2 id="_encapsulation">4. Encapsulation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>L&#8217;encapsulation consiste à protéger les propriétés d&#8217;une classe pour empêcher un accès direct. On utilise des méthodes appelées <strong>getters</strong> et <strong>setters</strong> pour accéder et modifier ces propriétés.</p>
@@ -724,10 +732,10 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_5_la_représentation_uml">5. La représentation UML</h2>
+<h2 id="_la_représentation_uml">5. La représentation UML</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_5_1_diagramme_de_classes">5.1 Diagramme de classes</h3>
+<h3 id="_diagramme_de_classes">5.1. Diagramme de classes</h3>
 <div class="paragraph">
 <p>Le diagramme de classes sert à représenter la structure des classes. Il montre les propriétés, les méthodes et l&#8217;héritage entre les classes.</p>
 </div>
@@ -740,20 +748,17 @@ pre.rouge .gs {
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_6_autre_exemple">6. Autre Exemple</h2>
-<div class="sectionbody">
-<div class="imageblock">
+<div class="sect2">
+<h3 id="_autre_exemple">5.2. Autre Exemple</h3>
+<div class="imageblock text-center">
 <div class="content">
 <img src="animaux.png" alt="animaux">
 </div>
 </div>
-<div class="sect2">
-<h3 id="_6_1_les_classes">6.1 Les classes</h3>
 <div class="sect3">
-<h4 id="_a_classe_animal">a. Classe Animal</h4>
+<h4 id="_les_classes">5.2.1. Les classes</h4>
+<div class="sect4">
+<h5 id="_classe_animal">Classe Animal</h5>
 <div class="paragraph">
 <p>La classe <code>Animal</code> représente un animal générique. Elle contient des attributs comme le <code>nom</code> et l'`age`, ainsi qu&#8217;une méthode <code>communiquer()</code> qui sera définie dans les classes enfants.</p>
 </div>
@@ -785,8 +790,8 @@ Cela permet de <code>protéger les données</code> tout en permettant l&#8217;ac
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_b_classe_chien">b. Classe Chien</h4>
+<div class="sect4">
+<h5 id="_classe_chien">Classe Chien</h5>
 <div class="paragraph">
 <p>La classe <code>Chien</code> hérite de <code>Animal</code>. Elle ajoute un attribut <code>race</code> et une méthode <code>aboyer()</code>.</p>
 </div>
@@ -809,8 +814,8 @@ Cela permet de <code>protéger les données</code> tout en permettant l&#8217;ac
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_c_classe_chat">c. Classe Chat</h4>
+<div class="sect4">
+<h5 id="_classe_chat">Classe Chat</h5>
 <div class="paragraph">
 <p>La classe <code>Chat</code> hérite également de <code>Animal</code>. Elle ajoute un attribut <code>race</code> et une méthode <code>miauler()</code>.</p>
 </div>
@@ -834,8 +839,8 @@ Cela permet de <code>protéger les données</code> tout en permettant l&#8217;ac
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_6_2_création_dobjets_dans_une_page">6.2 Création d&#8217;objets dans une page</h3>
+<div class="sect3">
+<h4 id="_création_dobjets_dans_une_page">5.2.2. Création d&#8217;objets dans une page</h4>
 <div class="paragraph">
 <p>Nous allons maintenant créer des objets pour les races spécifiques de chiens et de chats : <code>Labrador</code>, <code>Pitbull</code>, <code>Berger</code> pour les chiens, et un chat.</p>
 </div>
@@ -863,8 +868,9 @@ Cela permet de <code>protéger les données</code> tout en permettant l&#8217;ac
 Cette hiérarchie de classes permet de mieux organiser le code et de réutiliser les fonctionnalités communes entre les classes.</p>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="_6_3_exercices">6.3 Exercices</h3>
+<h3 id="_exercices">5.3. Exercices</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -884,10 +890,445 @@ Cette hiérarchie de classes permet de mieux organiser le code et de réutiliser
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_polymorphisme">6. Polymorphisme</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le polymorphisme permet à des objets de différentes classes d&#8217;être traités de manière interchangeable s&#8217;ils partagent des méthodes ou implémentent une même interface.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">communiquer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"L'animal fait un bruit."</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Chien</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">communiquer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"Le chien aboie."</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Chat</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">communiquer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"Le chat miaule."</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">faireCommuniquer</span><span class="p">(</span><span class="kt">Animal</span> <span class="nv">$animal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$animal</span><span class="o">-&gt;</span><span class="nf">communiquer</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nf">faireCommuniquer</span><span class="p">(</span><span class="k">new</span> <span class="nc">Chien</span><span class="p">());</span> <span class="c1">// Affiche "Le chien aboie."</span>
+<span class="nf">faireCommuniquer</span><span class="p">(</span><span class="k">new</span> <span class="nc">Chat</span><span class="p">());</span>  <span class="c1">// Affiche "Le chat miaule."</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>La <code>surcharge de méthodes</code> est un élément central du polymorphisme en POO. Elle permet à une sous-classe de fournir une <code>version spécifique</code> d&#8217;une méthode qui a été définie dans sa <code>classe parente</code>. C&#8217;est ce qui permet d&#8217;avoir un <code>comportement différent</code> selon le type d&#8217;objet, même si ces objets partagent une méthode avec le même nom.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_interfaces">7. Interfaces</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Une interface définit un ensemble de méthodes qu&#8217;une classe <strong>doit</strong> implémenter. Cela permet de définir un comportement commun sans imposer une hiérarchie d&#8217;héritage.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Toutes les méthodes d’une interface sont abstraites et doivent être implémentées par les classes qui l’implémentent.</p>
+</li>
+<li>
+<p>Une interface ne peut pas avoir de champs (variables d’instance).</p>
+</li>
+<li>
+<p>Elle décrit une relation <strong><code>a-un</code></strong> entre les classes qui l’implémentent.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="kd">interface</span> <span class="nc">Volant</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">voler</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Avion</span> <span class="kd">implements</span> <span class="nc">Volant</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">voler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"L'avion vole."</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Oiseau</span> <span class="kd">implements</span> <span class="nc">Volant</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">voler</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"L'oiseau bat des ailes."</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">faireVoler</span><span class="p">(</span><span class="kt">Volant</span> <span class="nv">$objet</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$objet</span><span class="o">-&gt;</span><span class="nf">voler</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nf">faireVoler</span><span class="p">(</span><span class="k">new</span> <span class="nc">Avion</span><span class="p">());</span> <span class="c1">// Affiche "L'avion vole."</span>
+<span class="nf">faireVoler</span><span class="p">(</span><span class="k">new</span> <span class="nc">Oiseau</span><span class="p">());</span> <span class="c1">// Affiche "L'oiseau bat des ailes."</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Les interfaces permettent de définir des comportements communs que différentes classes peuvent implémenter sans être liées par héritage.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_abstraction">8. Abstraction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les classes abstraites <strong>ne peuvent pas être instanciées</strong> directement doit être héritée par une autre classe.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Elle peut avoir des méthodes abstraites (sans implémentation) ainsi que des méthodes concrètes (avec implémentation).</p>
+</li>
+<li>
+<p>Les classes qui héritent d’une classe abstraite <strong>doivent implémenter les méthodes abstraites</strong>.</p>
+</li>
+<li>
+<p>Une classe abstraite peut avoir des champs (variables d’instance) et des méthodes non abstraites.</p>
+</li>
+<li>
+<p>Elle décrit une relation <strong><code>est-un</code></strong> entre les classes qui l’héritent.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="k">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$nom</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="nv">$nom</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">nom</span> <span class="o">=</span> <span class="nv">$nom</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">abstract</span> <span class="k">public</span> <span class="k">function</span> <span class="n">communiquer</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Chien</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">communiquer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"Le chien aboie."</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Chat</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">communiquer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"Le chat miaule."</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$chien</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Chien</span><span class="p">(</span><span class="s2">"Rex"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$chien</span><span class="o">-&gt;</span><span class="nf">communiquer</span><span class="p">();</span>  <span class="c1">// Affiche "Le chien aboie."</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Les classes abstraites définissent des comportements communs tout en forçant les sous-classes à implémenter certaines méthodes.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_classe_abstraite_vs_interface">9. Classe abstraite VS Interface</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong>Classe Abstraite</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Interface</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Héritage multiple</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Une classe ne peut hériter que d&#8217;une seule classe abstraite.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Une classe peut implémenter plusieurs interfaces.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Méthodes</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Peut contenir des méthodes abstraites et des méthodes concrètes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ne peut contenir que des méthodes abstraites.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Propriétés</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Peut avoir des propriétés.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ne peut pas avoir de propriétés.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Constructeur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Peut avoir un constructeur.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ne peut pas avoir de constructeur.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Accès aux membres</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les méthodes peuvent avoir des niveaux d&#8217;accès (<code>public</code>, <code>protected</code>, <code>private</code>).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les méthodes sont forcément <code>public</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilisation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Utilisée lorsque vous avez des méthodes communes avec une implémentation partielle et que vous souhaitez partager du code entre plusieurs classes.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Utilisée pour définir des comportements que des classes doivent implémenter, sans imposer d&#8217;héritage.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_les_statiques_en_php">10. Les Statiques en PHP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Contrairement à d&#8217;autres langages comme Java ou C#, PHP ne supporte pas la notion de <strong>classe entière définie comme statique</strong>.</p>
+</div>
+<div class="paragraph">
+<p>En PHP, seules les propriétés et les méthodes peuvent être déclarées comme statiques.
+Elles sont utilisées lorsque vous voulez qu&#8217;une méthode ou une propriété appartienne à la <strong>classe dans son ensemble</strong>, et non à <strong>chaque objet</strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_propriétés_statiques">10.1. Propriétés Statiques</h3>
+<div class="paragraph">
+<p>Une propriété statique est partagée par tous les objets de la classe. Cela signifie que toutes les instances de cette classe accèdent à la même valeur de la propriété.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
+<span class="kd">class</span> <span class="nc">Compteur</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="nv">$compte</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">incrementer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">::</span><span class="nv">$compte</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Incrémenter le compteur</span>
+<span class="nc">Compteur</span><span class="o">::</span><span class="nf">incrementer</span><span class="p">();</span>
+<span class="nc">Compteur</span><span class="o">::</span><span class="nf">incrementer</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nc">Compteur</span><span class="o">::</span><span class="nv">$compte</span><span class="p">;</span> <span class="c1">// Affiche: 2</span>
+<span class="cp">?&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_méthodes_statiques">10.2. Méthodes Statiques</h3>
+<div class="paragraph">
+<p>Une méthode statique peut être appelée directement depuis la classe, sans avoir besoin de créer une instance (un objet) de cette classe.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
+<span class="kd">class</span> <span class="nc">MathUtil</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="n">carre</span><span class="p">(</span><span class="nv">$nombre</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$nombre</span> <span class="o">*</span> <span class="nv">$nombre</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Appel de la méthode statique sans créer d'instance de la classe</span>
+<span class="k">echo</span> <span class="nc">MathUtil</span><span class="o">::</span><span class="nf">carre</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// Affiche: 16</span>
+<span class="cp">?&gt;</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Elles sont associées à la classe elle-même, pas aux objets (instances).</p>
+</li>
+<li>
+<p>Elles peuvent être appelées directement avec ClassName::method() ou ClassName::$property, sans créer d&#8217;instance.</p>
+</li>
+<li>
+<p>Elles sont souvent utilisées pour des utilitaires ou des valeurs partagées par tous les objets d&#8217;une classe.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_trait_spécifique_à_php">11. Trait (Spécifique à PHP)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les <strong>traits</strong> sont utiles lorsqu&#8217;on a du code commun à plusieurs classes, mais qu&#8217;on ne peut pas utiliser l&#8217;héritage, soit parce qu&#8217;il n&#8217;y a pas de lien logique entre les classes, soit parce qu&#8217;une classe est déjà en train d&#8217;hériter d&#8217;une autre (en PHP, une classe ne peut hériter que d&#8217;une seule classe).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
+<span class="kd">trait</span> <span class="nc">Salut</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">direBonjour</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">"Bonjour !"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Utilisateur</span> <span class="p">{</span>
+    <span class="kn">use</span> <span class="nc">Salut</span><span class="p">;</span> <span class="c1">// Utilise le trait Salut</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Admin</span> <span class="p">{</span>
+    <span class="kn">use</span> <span class="nc">Salut</span><span class="p">;</span> <span class="c1">// Utilise le trait Salut</span>
+<span class="p">}</span>
+
+<span class="nv">$utilisateur</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Utilisateur</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$utilisateur</span><span class="o">-&gt;</span><span class="nf">direBonjour</span><span class="p">();</span> <span class="c1">// Affiche "Bonjour !"</span>
+
+<span class="nv">$admin</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Admin</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nv">$admin</span><span class="o">-&gt;</span><span class="nf">direBonjour</span><span class="p">();</span> <span class="c1">// Affiche "Bonjour !"</span>
+<span class="cp">?&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dans cet exemple :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Le trait <code>Salut</code> contient une méthode <code>direBonjour()</code>.</p>
+</li>
+<li>
+<p>Les classes Utilisateur et Admin utilisent le mot-clé <code>use</code> pour inclure le trait <code>Salut</code>. Cela permet à ces deux classes d&#8217;utiliser la méthode <code>direBonjour()</code> sans avoir à la redéfinir dans chaque classe.</p>
+</li>
+<li>
+<p>Le <code>trait</code> permet de <code>réutiliser du code</code> dans plusieurs classes sans avoir besoin d&#8217;utiliser l&#8217;héritage. Les deux classes partagent la même méthode <code>direBonjour()</code> mais ne sont pas liées par un lien d&#8217;héritage.</p>
+</li>
+<li>
+<p>Les traits permettent la réutilisation de méthodes dans des classes non liées.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gestion_des_exceptions">12. Gestion des exceptions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les exceptions permettent de gérer les erreurs dans le code de manière contrôlée et de capturer des événements inattendus.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="kd">class</span> <span class="nc">Division</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">diviser</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nc">Exception</span><span class="p">(</span><span class="s2">"Division par zéro impossible."</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$a</span> <span class="o">/</span> <span class="nv">$b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$division</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Division</span><span class="p">();</span>
+    <span class="k">echo</span> <span class="nv">$division</span><span class="o">-&gt;</span><span class="nf">diviser</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nc">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">"Erreur : "</span> <span class="mf">.</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="nf">getMessage</span><span class="p">();</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;usage des <strong>exceptions</strong> permet de traiter les erreurs et de réagir aux situations imprévues dans l&#8217;exécution du programme.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossaire">13. Glossaire</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Concept</th>
+<th class="tableblock halign-left valign-top">Caractéristiques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Classe</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Une <strong>classe</strong> est un modèle pour créer des objets. Elle définit les attributs (propriétés) et les méthodes (comportements) que ces objets auront.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Objet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un <strong>objet</strong> est une instance d&#8217;une classe. Chaque objet possède ses propres valeurs pour les propriétés définies dans la classe et peut exécuter des méthodes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Héritage</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L'<strong>héritage</strong> permet à une classe d&#8217;hériter des attributs et méthodes d&#8217;une autre classe (classe parente). Il favorise la réutilisation de code et permet de spécialiser le comportement d&#8217;une classe.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Polymorphisme</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le <strong>polymorphisme</strong> permet d&#8217;utiliser des objets de différentes classes de manière interchangeable, à condition qu&#8217;ils partagent des méthodes. Il existe deux types :</p>
+<p class="tableblock">- <strong>Polymorphisme par redéfinition</strong> (overriding) : une sous-classe redéfinit une méthode de la classe parent.</p>
+<p class="tableblock">- <strong>Polymorphisme par surcharge</strong> (overloading) : PHP ne supporte pas la surcharge de méthodes par le nombre de paramètres comme dans d&#8217;autres langages, mais cela permet d&#8217;utiliser des méthodes du même nom dans différentes classes liées.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Encapsulation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L'<strong>encapsulation</strong> consiste à protéger les données d&#8217;un objet en les rendant accessibles uniquement via des méthodes spécifiques (getters et setters). Cela empêche l&#8217;accès direct aux propriétés depuis l&#8217;extérieur de la classe.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Abstraction</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L'<strong>abstraction</strong> est utilisée pour définir des classes abstraites ou des méthodes abstraites qui ne sont pas implémentées dans la classe parent, mais qui doivent être implémentées dans les sous-classes. Les classes abstraites ne peuvent pas être instanciées directement.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Interface</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Une <strong>interface</strong> définit un ensemble de méthodes qu&#8217;une classe doit implémenter. Contrairement à une classe abstraite, une interface ne contient que des déclarations de méthodes sans implémentation, et une classe peut implémenter plusieurs interfaces.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Trait</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les <strong>traits</strong> permettent de réutiliser des méthodes dans plusieurs classes sans utiliser l&#8217;héritage. Un trait contient des méthodes que plusieurs classes peuvent inclure à l&#8217;aide du mot-clé <code>use</code>. Ils sont utiles pour éviter la duplication de code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Surcharge de méthodes</strong> (Overriding)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La <strong>surcharge</strong> de méthode consiste à redéfinir une méthode héritée dans une sous-classe pour en modifier le comportement tout en utilisant le même nom de méthode. Cela fait partie du polymorphisme.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Constructeur</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un <strong>constructeur</strong> est une méthode spéciale appelée lors de la création d&#8217;un objet. Elle sert généralement à initialiser les propriétés de l&#8217;objet. En PHP, il est défini par <code>__construct()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Gestion des exceptions</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La <strong>gestion des exceptions</strong> permet de gérer les erreurs en capturant et en réagissant aux anomalies du programme via des blocs <code>try&#8230;&#8203;catch</code>. Cela évite que le programme ne plante en cas d&#8217;erreur inattendue.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Visibilité</strong> (public, private, protected)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La <strong>visibilité</strong> détermine où les propriétés et méthodes d&#8217;une classe peuvent être accédées :</p>
+<p class="tableblock">- <strong>Public</strong> : accessible de n&#8217;importe où. <br>
+- <strong>Private</strong> : accessible uniquement depuis la classe elle-même. <br>
+- <strong>Protected</strong> : accessible depuis la classe et ses sous-classes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Late Static Binding</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le <strong>late static binding</strong> en PHP utilise le mot-clé <code>static::</code> pour s&#8217;assurer que les méthodes et propriétés sont résolues dynamiquement en fonction de la classe appelée (et non de la classe où la méthode a été définie).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-25 18:48:02 +0200
+Last updated 2024-10-06 09:33:50 +0200
 </div>
 </div>
 </body>
