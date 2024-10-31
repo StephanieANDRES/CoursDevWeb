@@ -1,4 +1,18 @@
 <?php
+
+// Redirige l'utilisateur vers la page de connexion s'il n'est pas connecté ou si la session est expirée
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true && isset($_SESSION['cours'])) {
+    // Vérifie si le ticket de session a expiré
+    if (time() - $_SESSION['last_activity'] > $session_timeout ||  $_SESSION['cours']!="php") {
+        session_unset();
+        session_destroy();
+        header("Location: connexion.php?expired=true");
+        exit();
+    } else {
+        $_SESSION['last_activity'] = time(); // Met à jour le temps de dernière activité
+    }
+}
+
 // Détermine le répertoire contenant les fichiers HTML
 $directory = __DIR__;
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Les boucles et conditions en PHP</title>
+<title>Les Travaux Pratiques</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -433,483 +433,70 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-pre.rouge table td { padding: 5px; }
-pre.rouge table pre { margin: 0; }
-pre.rouge, pre.rouge .w {
-  color: #24292f;
-  background-color: #f6f8fa;
-}
-pre.rouge .k, pre.rouge .kd, pre.rouge .kn, pre.rouge .kp, pre.rouge .kr, pre.rouge .kt, pre.rouge .kv {
-  color: #cf222e;
-}
-pre.rouge .gr {
-  color: #f6f8fa;
-}
-pre.rouge .gd {
-  color: #82071e;
-  background-color: #ffebe9;
-}
-pre.rouge .nb {
-  color: #953800;
-}
-pre.rouge .nc {
-  color: #953800;
-}
-pre.rouge .no {
-  color: #953800;
-}
-pre.rouge .nn {
-  color: #953800;
-}
-pre.rouge .sr {
-  color: #116329;
-}
-pre.rouge .na {
-  color: #116329;
-}
-pre.rouge .nt {
-  color: #116329;
-}
-pre.rouge .gi {
-  color: #116329;
-  background-color: #dafbe1;
-}
-pre.rouge .kc {
-  color: #0550ae;
-}
-pre.rouge .l, pre.rouge .ld, pre.rouge .m, pre.rouge .mb, pre.rouge .mf, pre.rouge .mh, pre.rouge .mi, pre.rouge .il, pre.rouge .mo, pre.rouge .mx {
-  color: #0550ae;
-}
-pre.rouge .sb {
-  color: #0550ae;
-}
-pre.rouge .bp {
-  color: #0550ae;
-}
-pre.rouge .ne {
-  color: #0550ae;
-}
-pre.rouge .nl {
-  color: #0550ae;
-}
-pre.rouge .py {
-  color: #0550ae;
-}
-pre.rouge .nv, pre.rouge .vc, pre.rouge .vg, pre.rouge .vi, pre.rouge .vm {
-  color: #0550ae;
-}
-pre.rouge .o, pre.rouge .ow {
-  color: #0550ae;
-}
-pre.rouge .gh {
-  color: #0550ae;
-  font-weight: bold;
-}
-pre.rouge .gu {
-  color: #0550ae;
-  font-weight: bold;
-}
-pre.rouge .s, pre.rouge .sa, pre.rouge .sc, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .se, pre.rouge .sh, pre.rouge .sx, pre.rouge .s1, pre.rouge .ss {
-  color: #0a3069;
-}
-pre.rouge .nd {
-  color: #8250df;
-}
-pre.rouge .nf, pre.rouge .fm {
-  color: #8250df;
-}
-pre.rouge .err {
-  color: #f6f8fa;
-  background-color: #82071e;
-}
-pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cm, pre.rouge .cp, pre.rouge .cpf, pre.rouge .c1, pre.rouge .cs {
-  color: #6e7781;
-}
-pre.rouge .gl {
-  color: #6e7781;
-}
-pre.rouge .gt {
-  color: #6e7781;
-}
-pre.rouge .ni {
-  color: #24292f;
-}
-pre.rouge .si {
-  color: #24292f;
-}
-pre.rouge .ge {
-  color: #24292f;
-  font-style: italic;
-}
-pre.rouge .gs {
-  color: #24292f;
-  font-weight: bold;
-}
-</style>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Les boucles et conditions en PHP</h1>
+<h1>Les Travaux Pratiques</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table des Matières</div>
 <ul class="sectlevel1">
-<li><a href="#_1_les_boucles_en_php">1. Les boucles en PHP</a>
-<ul class="sectlevel2">
-<li><a href="#_1_1_boucle_while">1.1 Boucle <code>while</code></a></li>
-<li><a href="#_1_2_boucle_dowhile">1.2 Boucle <code>do&#8230;&#8203;while</code></a></li>
-<li><a href="#_1_3_boucle_for">1.3 Boucle <code>for</code></a></li>
-<li><a href="#_1_4_boucle_foreach">1.4 Boucle <code>foreach</code></a></li>
-</ul>
-</li>
-<li><a href="#_2_les_conditions_en_php">2. Les conditions en PHP</a>
-<ul class="sectlevel2">
-<li><a href="#_2_1_condition_if">2.1 Condition <code>if</code></a></li>
-<li><a href="#_2_2_condition_ifelse">2.2 Condition <code>if&#8230;&#8203;else</code></a></li>
-<li><a href="#_2_3_condition_elseif">2.3 Condition <code>elseif</code></a></li>
-<li><a href="#_2_4_condition_ternaire">2.4 Condition ternaire</a></li>
-<li><a href="#_2_5_opérateur_null_coalescent">2.5 Opérateur Null coalescent</a></li>
-<li><a href="#_2_6_switch">2.6 Switch</a></li>
-<li><a href="#_2_7_comparaison_non_booléenne">2.7 Comparaison non booléenne</a></li>
-</ul>
-</li>
+<li><a href="#_tp_1_garage_roy">TP 1 : Garage Roy</a></li>
+<li><a href="#_tp_2_site_rencontres_part1">TP 2 : Site Rencontres part1</a></li>
+<li><a href="#_tp_3_site_rencontres_part2">TP 3 : Site Rencontres part2</a></li>
+<li><a href="#_tp_4_site_rencontres_part3">TP 4 : Site Rencontres part3</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_1_les_boucles_en_php">1. Les boucles en PHP</h2>
+<h2 id="_tp_1_garage_roy">TP 1 : Garage Roy</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_1_1_boucle_while">1.1 Boucle <code>while</code></h3>
 <div class="paragraph">
-<p>La boucle <code>while</code> continue d&#8217;exécuter le bloc de code tant que la condition spécifiée est vraie.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="nv">$counter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="k">while</span> <span class="p">(</span><span class="nv">$counter</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Compteur: </span><span class="nv">$counter</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
-    <span class="nv">$counter</span> <span class="o">=</span> <span class="nv">$counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
+<p><strong>Notions abordées</strong> : site statique, site dynamique, formulaires, source de données txt, connexion à une BDD, lecture d&#8217;une BDD, balises sémantiques HTML5, référecement SEO, injections SQL.</p>
 </div>
 <div class="paragraph">
-<p>Tant que <code>$counter</code> est inférieur ou égal à 5, la boucle continue. À chaque itération, la valeur de <code>$counter</code> augmente de 1.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_1_2_boucle_dowhile">1.2 Boucle <code>do&#8230;&#8203;while</code></h3>
-<div class="paragraph">
-<p>La boucle <code>do&#8230;&#8203;while</code> exécute le code une première fois, puis vérifie la condition à la fin.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="nv">$counter</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="k">do</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Compteur: </span><span class="nv">$counter</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
-    <span class="nv">$counter</span> <span class="o">=</span> <span class="nv">$counter</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nv">$counter</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">);</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>La boucle s&#8217;exécute une première fois avant même de vérifier la condition.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_1_3_boucle_for">1.3 Boucle <code>for</code></h3>
-<div class="paragraph">
-<p>La boucle <code>for</code> est utilisée quand on connaît à l&#8217;avance le nombre d&#8217;itérations.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Compteur: </span><span class="nv">$i</span><span class="s2">&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>La boucle s&#8217;exécute de 1 à 5. On initialise la variable <code>$i</code>, puis on définit la condition et l&#8217;incrémentation à chaque itération.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_1_4_boucle_foreach">1.4 Boucle <code>foreach</code></h3>
-<div class="paragraph">
-<p>La boucle <code>foreach</code> est idéale pour parcourir des tableaux.</p>
-</div>
-<div class="sect3">
-<h4 id="_a_tableaux_indexés">a. Tableaux indexés</h4>
-<div class="paragraph">
-<p>Les tableaux indexés utilisent des indices numériques pour accéder à leurs éléments.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="c1">// Création d'un tableau indexé</span>
-<span class="nv">$fruits</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"Pomme"</span><span class="p">,</span> <span class="s2">"Banane"</span><span class="p">,</span> <span class="s2">"Orange"</span><span class="p">);</span>
-
-<span class="c1">// Accès aux éléments du tableau</span>
-<span class="k">echo</span> <span class="nv">$fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// Affiche "Pomme"</span>
-<span class="k">echo</span> <span class="nv">$fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// Affiche "Banane"</span>
-<span class="k">echo</span> <span class="nv">$fruits</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// Affiche "Orange"</span>
-
-<span class="c1">// Ajout d'un élément</span>
-<span class="nv">$fruits</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"Kiwi"</span><span class="p">;</span> <span class="c1">// Ajoute "Kiwi" à la fin du tableau</span>
-
-<span class="c1">// Afficher tous les fruits</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$fruits</span> <span class="k">as</span> <span class="nv">$fruit</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="nv">$fruit</span> <span class="mf">.</span> <span class="s2">" "</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_b_tableaux_associatifs">b. Tableaux associatifs</h4>
-<div class="paragraph">
-<p>Les tableaux associatifs utilisent des clés (chaînes de caractères) pour accéder à leurs éléments. Cela permet de stocker des valeurs avec des clés significatives.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="c1">// Création d'un tableau associatif</span>
-<span class="nv">$personne</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s2">"nom"</span> <span class="o">=&gt;</span> <span class="s2">"Dupont"</span><span class="p">,</span>
-    <span class="s2">"prenom"</span> <span class="o">=&gt;</span> <span class="s2">"Jean"</span><span class="p">,</span>
-    <span class="s2">"age"</span> <span class="o">=&gt;</span> <span class="mi">30</span>
-<span class="p">);</span>
-
-<span class="c1">// Accès aux éléments du tableau associatif</span>
-<span class="k">echo</span> <span class="nv">$personne</span><span class="p">[</span><span class="s2">"nom"</span><span class="p">];</span> <span class="c1">// Affiche "Dupont"</span>
-<span class="k">echo</span> <span class="nv">$personne</span><span class="p">[</span><span class="s2">"prenom"</span><span class="p">];</span> <span class="c1">// Affiche "Jean"</span>
-<span class="k">echo</span> <span class="nv">$personne</span><span class="p">[</span><span class="s2">"age"</span><span class="p">];</span> <span class="c1">// Affiche "30"</span>
-
-<span class="c1">// Ajout d'un nouvel élément</span>
-<span class="nv">$personne</span><span class="p">[</span><span class="s2">"ville"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Paris"</span><span class="p">;</span> <span class="c1">// Ajoute "ville" avec la valeur "Paris"</span>
-
-<span class="c1">// Afficher toutes les informations</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$personne</span> <span class="k">as</span> <span class="nv">$cle</span> <span class="o">=&gt;</span> <span class="nv">$valeur</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="nv">$cle</span> <span class="mf">.</span> <span class="s2">": "</span> <span class="mf">.</span> <span class="nv">$valeur</span> <span class="mf">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_c_tableaux_multidimensionnels">c. Tableaux multidimensionnels</h4>
-<div class="paragraph">
-<p>Les tableaux multidimensionnels sont des tableaux qui contiennent d&#8217;autres tableaux. Cela permet de créer des structures de données plus complexes.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="c1">// Création d'un tableau multidimensionnel</span>
-<span class="nv">$contacts</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="k">array</span><span class="p">(</span><span class="s2">"nom"</span> <span class="o">=&gt;</span> <span class="s2">"Dupont"</span><span class="p">,</span> <span class="s2">"prenom"</span> <span class="o">=&gt;</span> <span class="s2">"Jean"</span><span class="p">,</span> <span class="s2">"age"</span> <span class="o">=&gt;</span> <span class="mi">30</span><span class="p">),</span>
-    <span class="k">array</span><span class="p">(</span><span class="s2">"nom"</span> <span class="o">=&gt;</span> <span class="s2">"Martin"</span><span class="p">,</span> <span class="s2">"prenom"</span> <span class="o">=&gt;</span> <span class="s2">"Sophie"</span><span class="p">,</span> <span class="s2">"age"</span> <span class="o">=&gt;</span> <span class="mi">25</span><span class="p">),</span>
-<span class="p">);</span>
-
-<span class="c1">// Accès aux éléments du tableau multidimensionnel</span>
-<span class="k">echo</span> <span class="nv">$contacts</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"nom"</span><span class="p">];</span> <span class="c1">// Affiche "Dupont"</span>
-<span class="k">echo</span> <span class="nv">$contacts</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">"prenom"</span><span class="p">];</span> <span class="c1">// Affiche "Sophie"</span>
-
-<span class="c1">// Afficher tous les contacts</span>
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$contacts</span> <span class="k">as</span> <span class="nv">$contact</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="nv">$contact</span><span class="p">[</span><span class="s2">"nom"</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" "</span> <span class="mf">.</span> <span class="nv">$contact</span><span class="p">[</span><span class="s2">"prenom"</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" ("</span> <span class="mf">.</span> <span class="nv">$contact</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="mf">.</span> <span class="s2">" ans)</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
-</div>
+<p><a href="TP/TP1/TP1_garageRoy_3h_v2.pdf">PDF</a> |
+<a href="TP/TP1/version_eleve.zip">Sources</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_2_les_conditions_en_php">2. Les conditions en PHP</h2>
+<h2 id="_tp_2_site_rencontres_part1">TP 2 : Site Rencontres part1</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_2_1_condition_if">2.1 Condition <code>if</code></h3>
 <div class="paragraph">
-<p>La structure <code>if</code> permet d&#8217;exécuter un bloc de code si la condition est vraie.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="nv">$age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Vous êtes mineur, vous ne pouvez pas entrer.&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
+<p><strong>Notions abordées</strong> : Git, Attributs placeholder, selected et required, récupation des formulaires $_POST, $_GET, PDO, statement, fetch, $_SESSION, htmlspecialchars, écran de log, hash des mots de passe, isset, données calculées</p>
 </div>
 <div class="paragraph">
-<p>Si l&#8217;âge est inférieur à 18, le bloc est éxécuté sinon il ne l&#8217;est pas.</p>
+<p><a href="TP/TP02_SiteRencontre_part1.pdf">PDF</a></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_2_2_condition_ifelse">2.2 Condition <code>if&#8230;&#8203;else</code></h3>
+</div>
+<div class="sect1">
+<h2 id="_tp_3_site_rencontres_part2">TP 3 : Site Rencontres part2</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>La structure <code>if&#8230;&#8203;else</code> permet d&#8217;exécuter un bloc de code selon une condition.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="nv">$age</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Vous êtes majeur.&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Vous êtes mineur.&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
+<p><strong>Notions abordées</strong> : Les classes</p>
 </div>
 <div class="paragraph">
-<p>Si l&#8217;âge est supérieur ou égal à 18, la première branche est exécutée, sinon c&#8217;est la deuxième qui l&#8217;est.</p>
+<p><a href="TP/TP03_SiteRencontre_part2.pdf">PDF</a></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_2_3_condition_elseif">2.3 Condition <code>elseif</code></h3>
+</div>
+<div class="sect1">
+<h2 id="_tp_4_site_rencontres_part3">TP 4 : Site Rencontres part3</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>La structure <code>elseif</code> permet de vérifier plusieurs conditions.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="nv">$note</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$note</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Excellent&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$note</span> <span class="o">&gt;=</span> <span class="mi">75</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Très bien&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"Bien&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
+<p><strong>Notions abordées</strong> : Les fonctions statiques, lire et écrire dans un fichier texte, formulaire de recherche, analyse de code</p>
 </div>
 <div class="paragraph">
-<p>Chaque condition est vérifiée l&#8217;une après l&#8217;autre jusqu&#8217;à ce qu&#8217;une soit vraie.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_2_4_condition_ternaire">2.4 Condition ternaire</h3>
-<div class="paragraph">
-<p>La condition ternaire permet de simplifier une instruction <code>if&#8230;&#8203;else</code>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="nv">$age</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
-<span class="nv">$message</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="o">?</span> <span class="s2">"Majeur"</span> <span class="o">:</span> <span class="s2">"Mineur"</span><span class="p">;</span>
-<span class="k">echo</span> <span class="nv">$message</span><span class="p">;</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Si <code>$age</code> est supérieur ou égal à 18, alors "Majeur" est assigné à <code>$message</code>, sinon c&#8217;est "Mineur".</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_2_5_opérateur_null_coalescent">2.5 Opérateur Null coalescent</h3>
-<div class="paragraph">
-<p>L&#8217;opérateur de coalescence nulle (??) est un ajout syntaxique pratique en PHP 7, souvent utilisé à la place de <code>isset()</code>. Il renvoie la valeur du premier opérande si celui-ci est défini et n&#8217;est pas <code>null</code>. Si ce n&#8217;est pas le cas, il renvoie la valeur du second opérande.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="c1">// Récupére la valeur de $_GET['utilisateur'] retourne 'aucun' s'il n'existe pas.</span>
-<span class="nv">$identifiant</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'utilisateur'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'aucun'</span><span class="p">;</span>
-<span class="c1">// Ceci est équivalent à la condition ternaire :</span>
-<span class="nv">$identifiant</span> <span class="o">=</span> <span class="k">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'utilisateur'</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'utilisateur'</span><span class="p">]</span> <span class="o">:</span> <span class="s1">'aucun'</span><span class="p">;</span>
-
-<span class="c1">// L'opérateur permet de faire du chaînage : Ceci va retourner la première valeur définie respectivement dans $_GET['utilisateur'], $_POST['utilisateur'] et 'aucun'.</span>
-<span class="nv">$identifiant</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'utilisateur'</span><span class="p">]</span> <span class="o">??</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'utilisateur'</span><span class="p">]</span> <span class="o">??</span> <span class="s1">'aucun'</span><span class="p">;</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_2_6_switch">2.6 Switch</h3>
-<div class="paragraph">
-<p>Le <code>switch</code> est utilisé lorsque plusieurs valeurs possibles sont à vérifier.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="nv">$fruit</span> <span class="o">=</span> <span class="s2">"Pomme"</span><span class="p">;</span>
-<span class="k">switch</span> <span class="p">(</span><span class="nv">$fruit</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="s2">"Pomme"</span><span class="o">:</span>
-        <span class="k">echo</span> <span class="s2">"C'est une pomme&lt;br&gt;"</span><span class="p">;</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">case</span> <span class="s2">"Banane"</span><span class="o">:</span>
-        <span class="k">echo</span> <span class="s2">"C'est une banane&lt;br&gt;"</span><span class="p">;</span>
-        <span class="k">break</span><span class="p">;</span>
-    <span class="k">default</span><span class="o">:</span>
-        <span class="k">echo</span> <span class="s2">"Fruit inconnu&lt;br&gt;"</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Le <code>switch</code> compare la variable <code>$fruit</code> à chaque <code>case</code>, et exécute le code correspondant. Le break est obligatoire sur chaque bloc, sinon le programme continue de s&#8217;éxécuter.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_2_7_comparaison_non_booléenne">2.7 Comparaison non booléenne</h3>
-<div class="paragraph">
-<p>En PHP, il est possible d&#8217;utiliser une variable dans une condition sans qu&#8217;elle soit explicitement un booléen.<br>
-PHP effectue une <strong>conversion implicite en booléen</strong> grâce à son <strong>typage faible</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Lorsque l&#8217;on utilise une variable dans une condition, comme dans <code>if ($age)</code>, PHP convertit automatiquement la valeur de <code>$age</code> en <strong>booléen</strong> en suivant ces règles :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Si <code>$age</code> contient une <strong>valeur non vide et différente de 0</strong>, la condition sera évaluée à <code>true</code>.</p>
-</li>
-<li>
-<p>Si <code>$age</code> est <strong>null</strong>, <strong>0</strong>, une <strong>chaîne vide</strong> (""), ou toute autre <strong>valeur vide</strong> (comme <code>false</code> ou un tableau vide <code>[]</code>), la condition sera évaluée à <code>false</code>.</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
-<span class="nv">$age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"C'est vrai"</span><span class="p">;</span> <span class="c1">// Ne sera pas exécuté, car 0 est considéré comme false</span>
-<span class="p">}</span>
-
-<span class="nv">$age</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"C'est vrai"</span><span class="p">;</span> <span class="c1">// Sera exécuté, car 25 est considéré comme true</span>
-<span class="p">}</span>
-
-<span class="nv">$age</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"C'est vrai"</span><span class="p">;</span> <span class="c1">// Ne sera pas exécuté, car null est false</span>
-<span class="p">}</span>
-
-<span class="nv">$age</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$age</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">"C'est vrai"</span><span class="p">;</span> <span class="c1">// Ne sera pas exécuté, car une chaîne vide est false</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre>
-</div>
-</div>
+<p><a href="TP/TP04_SiteRencontre_part3.pdf">PDF</a></p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-13 10:56:18 +0200
+Last updated 2024-10-31 14:35:26 +0100
 </div>
 </div>
 </body>
