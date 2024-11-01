@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.20">
-<title>Les classes en PHP</title>
+<title>La POO en PHP</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -550,38 +550,45 @@ pre.rouge .gs {
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>Les classes en PHP</h1>
+<h1>La POO en PHP</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table des Matières</div>
 <ul class="sectlevel1">
 <li><a href="#_définition_dune_classe">1. Définition d&#8217;une classe</a></li>
-<li><a href="#_création_dun_objet">2. Création d’un objet</a></li>
-<li><a href="#_héritage">3. Héritage</a></li>
-<li><a href="#_encapsulation">4. Encapsulation</a></li>
-<li><a href="#_la_représentation_uml">5. La représentation UML</a>
+<li><a href="#_les_getters_et_les_setters">2. Les getters et les setters</a></li>
+<li><a href="#_création_dun_objet">3. Création d’un objet</a></li>
+<li><a href="#_héritage">4. Héritage</a></li>
+<li><a href="#_encapsulation">5. Encapsulation</a></li>
+<li><a href="#_la_représentation_uml">6. La représentation UML</a>
 <ul class="sectlevel2">
-<li><a href="#_diagramme_de_classes">5.1. Diagramme de classes</a></li>
-<li><a href="#_autre_exemple">5.2. Autre Exemple</a></li>
-<li><a href="#_exercices">5.3. Exercices</a></li>
+<li><a href="#_diagramme_de_classes">6.1. Diagramme de classes</a></li>
+<li><a href="#_autre_exemple">6.2. Autre Exemple</a></li>
+<li><a href="#_exercices">6.3. Exercices</a></li>
 </ul>
 </li>
-<li><a href="#_polymorphisme">6. Polymorphisme</a></li>
-<li><a href="#_interfaces">7. Interfaces</a>
+<li><a href="#_polymorphisme">7. Polymorphisme</a></li>
+<li><a href="#_interfaces">8. Interfaces</a>
 <ul class="sectlevel2">
-<li><a href="#_implémenter_plusieurs_interfaces">7.1. Implémenter plusieurs interfaces</a></li>
+<li><a href="#_implémenter_plusieurs_interfaces">8.1. Implémenter plusieurs interfaces</a></li>
 </ul>
 </li>
-<li><a href="#_abstraction">8. Abstraction</a></li>
-<li><a href="#_classe_abstraite_vs_interface">9. Classe abstraite VS Interface</a></li>
-<li><a href="#_les_statiques_en_php">10. Les Statiques en PHP</a>
+<li><a href="#_abstraction">9. Abstraction</a></li>
+<li><a href="#_classe_abstraite_vs_interface">10. Classe abstraite VS Interface</a></li>
+<li><a href="#_les_statiques_en_php">11. Les Statiques en PHP</a>
 <ul class="sectlevel2">
-<li><a href="#_propriétés_statiques">10.1. Propriétés Statiques</a></li>
-<li><a href="#_méthodes_statiques">10.2. Méthodes Statiques</a></li>
+<li><a href="#_propriétés_statiques">11.1. Propriétés Statiques</a></li>
+<li><a href="#_méthodes_statiques">11.2. Méthodes Statiques</a></li>
 </ul>
 </li>
-<li><a href="#_trait_spécifique_à_php">11. Trait (Spécifique à PHP)</a></li>
-<li><a href="#_gestion_des_exceptions">12. Gestion des exceptions</a></li>
-<li><a href="#_glossaire">13. Glossaire</a></li>
+<li><a href="#_trait_spécifique_à_php">12. Trait (Spécifique à PHP)</a></li>
+<li><a href="#_gestion_des_exceptions">13. Gestion des exceptions</a></li>
+<li><a href="#_hydratation_des_données">14. Hydratation des Données</a>
+<ul class="sectlevel2">
+<li><a href="#_classe_utilisateur">14.1. Classe Utilisateur</a></li>
+<li><a href="#_utilisation_de_lhydratation">14.2. Utilisation de l&#8217;Hydratation</a></li>
+</ul>
+</li>
+<li><a href="#_glossaire">15. Glossaire</a></li>
 </ul>
 </div>
 </div>
@@ -630,7 +637,48 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_création_dun_objet">2. Création d’un objet</h2>
+<h2 id="_les_getters_et_les_setters">2. Les getters et les setters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les <strong>getters</strong> et <strong>setters</strong> sont des méthodes en programmation orientée objet utilisées pour accéder et modifier les propriétés d&#8217;un objet. Ils permettent de gérer la visibilité et la validation des données et assurent une meilleure encapsulation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="kd">class</span> <span class="nc">User</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$name</span><span class="p">;</span>
+
+    <span class="c1">//Getter</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Setter</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">setName</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Bonnes pratiques :</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Valider les données avant de les attribuer à la propriété pour éviter les erreurs.</p>
+</li>
+<li>
+<p>Utiliser <code>private</code> pour les propriétés et accédez-y uniquement via les getters et setters.</p>
+</li>
+<li>
+<p>Utiliser des noms de méthodes clairs et cohérents (get et set) suivi du nom de la propriété, ce qui facilite la compréhension.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_création_dun_objet">3. Création d’un objet</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Un objet est une instance d&#8217;une classe. On peut créer autant d&#8217;objets qu’on le souhaite à partir d’une classe.</p>
@@ -659,7 +707,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_héritage">3. Héritage</h2>
+<h2 id="_héritage">4. Héritage</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>L’héritage permet à une classe de récupérer les propriétés et méthodes d’une autre classe.</p>
@@ -695,7 +743,7 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_encapsulation">4. Encapsulation</h2>
+<h2 id="_encapsulation">5. Encapsulation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>L&#8217;encapsulation consiste à protéger les propriétés d&#8217;une classe pour empêcher un accès direct. On utilise des méthodes appelées <strong>getters</strong> et <strong>setters</strong> pour accéder et modifier ces propriétés.</p>
@@ -736,10 +784,10 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_la_représentation_uml">5. La représentation UML</h2>
+<h2 id="_la_représentation_uml">6. La représentation UML</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_diagramme_de_classes">5.1. Diagramme de classes</h3>
+<h3 id="_diagramme_de_classes">6.1. Diagramme de classes</h3>
 <div class="paragraph">
 <p>Le diagramme de classes sert à représenter la structure des classes. Il montre les propriétés, les méthodes et l&#8217;héritage entre les classes.</p>
 </div>
@@ -753,14 +801,14 @@ pre.rouge .gs {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_autre_exemple">5.2. Autre Exemple</h3>
+<h3 id="_autre_exemple">6.2. Autre Exemple</h3>
 <div class="imageblock text-center">
 <div class="content">
 <img src="animaux.png" alt="animaux">
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_classes">5.2.1. Les classes</h4>
+<h4 id="_les_classes">6.2.1. Les classes</h4>
 <div class="sect4">
 <h5 id="_classe_animal">Classe Animal</h5>
 <div class="paragraph">
@@ -844,7 +892,7 @@ Cela permet de <code>protéger les données</code> tout en permettant l&#8217;ac
 </div>
 </div>
 <div class="sect3">
-<h4 id="_création_dobjets_dans_une_page">5.2.2. Création d&#8217;objets dans une page</h4>
+<h4 id="_création_dobjets_dans_une_page">6.2.2. Création d&#8217;objets dans une page</h4>
 <div class="paragraph">
 <p>Nous allons maintenant créer des objets pour les races spécifiques de chiens et de chats : <code>Labrador</code>, <code>Pitbull</code>, <code>Berger</code> pour les chiens, et un chat.</p>
 </div>
@@ -874,7 +922,7 @@ Cette hiérarchie de classes permet de mieux organiser le code et de réutiliser
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exercices">5.3. Exercices</h3>
+<h3 id="_exercices">6.3. Exercices</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -895,7 +943,7 @@ Cette hiérarchie de classes permet de mieux organiser le code et de réutiliser
 </div>
 </div>
 <div class="sect1">
-<h2 id="_polymorphisme">6. Polymorphisme</h2>
+<h2 id="_polymorphisme">7. Polymorphisme</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Le polymorphisme permet à des objets de différentes classes d&#8217;être traités de manière interchangeable s&#8217;ils partagent des méthodes ou implémentent une même interface.</p>
@@ -935,7 +983,7 @@ Cette hiérarchie de classes permet de mieux organiser le code et de réutiliser
 </div>
 </div>
 <div class="sect1">
-<h2 id="_interfaces">7. Interfaces</h2>
+<h2 id="_interfaces">8. Interfaces</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Une interface définit un ensemble de méthodes qu&#8217;une classe <strong>doit</strong> implémenter. Cela permet de définir un comportement commun sans imposer une hiérarchie d&#8217;héritage.</p>
@@ -987,7 +1035,7 @@ Cette hiérarchie de classes permet de mieux organiser le code et de réutiliser
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_implémenter_plusieurs_interfaces">7.1. Implémenter plusieurs interfaces</h3>
+<h3 id="_implémenter_plusieurs_interfaces">8.1. Implémenter plusieurs interfaces</h3>
 <div class="paragraph">
 <p>L&#8217;héritage multiple n&#8217;est pas autorisé en PHP. Cependant, il est possible de définir des contrats que plusieurs classes peuvent implémenter.<br>
 Cela permet à différentes classes de partager des méthodes sans avoir à hériter d&#8217;une classe commune.</p>
@@ -1017,7 +1065,7 @@ Cela permet à différentes classes de partager des méthodes sans avoir à hér
 </div>
 </div>
 <div class="sect1">
-<h2 id="_abstraction">8. Abstraction</h2>
+<h2 id="_abstraction">9. Abstraction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les classes abstraites <strong>ne peuvent pas être instanciées</strong> directement doit être héritée par une autre classe.</p>
@@ -1076,7 +1124,7 @@ Cela permet à différentes classes de partager des méthodes sans avoir à hér
 </div>
 </div>
 <div class="sect1">
-<h2 id="_classe_abstraite_vs_interface">9. Classe abstraite VS Interface</h2>
+<h2 id="_classe_abstraite_vs_interface">10. Classe abstraite VS Interface</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1127,7 +1175,7 @@ Cela permet à différentes classes de partager des méthodes sans avoir à hér
 </div>
 </div>
 <div class="sect1">
-<h2 id="_les_statiques_en_php">10. Les Statiques en PHP</h2>
+<h2 id="_les_statiques_en_php">11. Les Statiques en PHP</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Contrairement à d&#8217;autres langages comme Java ou C#, PHP ne supporte pas la notion de <strong>classe entière définie comme statique</strong>.</p>
@@ -1137,7 +1185,7 @@ Cela permet à différentes classes de partager des méthodes sans avoir à hér
 Elles sont utilisées lorsque vous voulez qu&#8217;une méthode ou une propriété appartienne à la <strong>classe dans son ensemble</strong>, et non à <strong>chaque objet</strong>.</p>
 </div>
 <div class="sect2">
-<h3 id="_propriétés_statiques">10.1. Propriétés Statiques</h3>
+<h3 id="_propriétés_statiques">11.1. Propriétés Statiques</h3>
 <div class="paragraph">
 <p>Une propriété statique est partagée par tous les objets de la classe. Cela signifie que toutes les instances de cette classe accèdent à la même valeur de la propriété.</p>
 </div>
@@ -1161,7 +1209,7 @@ Elles sont utilisées lorsque vous voulez qu&#8217;une méthode ou une propriét
 </div>
 </div>
 <div class="sect2">
-<h3 id="_méthodes_statiques">10.2. Méthodes Statiques</h3>
+<h3 id="_méthodes_statiques">11.2. Méthodes Statiques</h3>
 <div class="paragraph">
 <p>Une méthode statique peut être appelée directement depuis la classe, sans avoir besoin de créer une instance (un objet) de cette classe.</p>
 </div>
@@ -1196,7 +1244,7 @@ Elles sont utilisées lorsque vous voulez qu&#8217;une méthode ou une propriét
 </div>
 </div>
 <div class="sect1">
-<h2 id="_trait_spécifique_à_php">11. Trait (Spécifique à PHP)</h2>
+<h2 id="_trait_spécifique_à_php">12. Trait (Spécifique à PHP)</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les <strong>traits</strong> sont utiles lorsqu&#8217;on a du code commun à plusieurs classes, mais qu&#8217;on ne peut pas utiliser l&#8217;héritage, soit parce qu&#8217;il n&#8217;y a pas de lien logique entre les classes, soit parce qu&#8217;une classe est déjà en train d&#8217;hériter d&#8217;une autre (en PHP, une classe ne peut hériter que d&#8217;une seule classe).</p>
@@ -1248,7 +1296,7 @@ Elles sont utilisées lorsque vous voulez qu&#8217;une méthode ou une propriét
 </div>
 </div>
 <div class="sect1">
-<h2 id="_gestion_des_exceptions">12. Gestion des exceptions</h2>
+<h2 id="_gestion_des_exceptions">13. Gestion des exceptions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les exceptions permettent de gérer les erreurs dans le code de manière contrôlée et de capturer des événements inattendus.</p>
@@ -1282,7 +1330,84 @@ Elles sont utilisées lorsque vous voulez qu&#8217;une méthode ou une propriét
 </div>
 </div>
 <div class="sect1">
-<h2 id="_glossaire">13. Glossaire</h2>
+<h2 id="_hydratation_des_données">14. Hydratation des Données</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>L'<strong>hydratation</strong> en PHP est une technique de programmation orientée objet qui consiste à remplir les propriétés d&#8217;un objet à partir d&#8217;un ensemble de données, souvent issues d&#8217;une base de données. Elle permet de mapper automatiquement les données sur les propriétés de l&#8217;objet, simplifiant ainsi l&#8217;initialisation.</p>
+</div>
+<div class="paragraph">
+<p>Supposons que nous avons une base de données contenant des informations sur des utilisateurs, et que nous voulons créer des objets <code>Utilisateur</code> pour chaque enregistrement.</p>
+</div>
+<div class="sect2">
+<h3 id="_classe_utilisateur">14.1. Classe Utilisateur</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="o">&lt;?</span><span class="n">php</span>
+<span class="kd">class</span> <span class="nc">Utilisateur</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$nom</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$prenom</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$email</span><span class="p">;</span>
+
+    <span class="c1">// Constructeur qui appelle la méthode hydrate pour initialiser l'objet</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$data</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="nf">hydrate</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Méthode d'hydratation</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="n">hydrate</span><span class="p">(</span><span class="kt">array</span> <span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$method</span> <span class="o">=</span> <span class="s1">'set'</span> <span class="mf">.</span> <span class="nb">ucfirst</span><span class="p">(</span><span class="nv">$key</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">method_exists</span><span class="p">(</span><span class="nv">$this</span><span class="p">,</span> <span class="nv">$method</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="nv">$method</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Getters et setters</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getId</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">setId</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">getNom</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">nom</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="n">setNom</span><span class="p">(</span><span class="nv">$nom</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">nom</span> <span class="o">=</span> <span class="nv">$nom</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_utilisation_de_lhydratation">14.2. Utilisation de l&#8217;Hydratation</h3>
+<div class="paragraph">
+<p>En créant une nouvelle instance de <code>Utilisateur</code>, on peut directement lui passer les données pour initialiser ses propriétés :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="php"><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'id'</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">'nom'</span> <span class="o">=&gt;</span> <span class="s1">'Dupont'</span><span class="p">,</span>
+    <span class="s1">'prenom'</span> <span class="o">=&gt;</span> <span class="s1">'Jean'</span><span class="p">,</span>
+    <span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'jean.dupont@example.com'</span>
+<span class="p">];</span>
+
+<span class="nv">$utilisateur</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Utilisateur</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nv">$utilisateur</span><span class="o">-&gt;</span><span class="nf">getNom</span><span class="p">();</span> <span class="c1">// Affiche "Dupont"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossaire">15. Glossaire</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1360,7 +1485,7 @@ Elles sont utilisées lorsque vous voulez qu&#8217;une méthode ou une propriét
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-13 11:39:09 +0200
+Last updated 2024-11-01 08:28:51 +0100
 </div>
 </div>
 </body>

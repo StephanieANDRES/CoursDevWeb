@@ -529,52 +529,45 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="toc" class="toc2">
 <div id="toctitle">Table des Matières</div>
 <ul class="sectlevel1">
-<li><a href="#_1_introduction_à_pdo">1. Introduction à PDO</a>
+<li><a href="#_introduction_à_pdo">1. Introduction à PDO</a>
 <ul class="sectlevel2">
-<li><a href="#_avantages_de_pdo">Avantages de PDO</a></li>
+<li><a href="#_avantages_de_pdo">1.1. Avantages de PDO</a></li>
+<li><a href="#_installation_et_configuration">1.2. Installation et Configuration</a></li>
 </ul>
 </li>
-<li><a href="#_2_installation_et_configuration">2. Installation et Configuration</a>
+<li><a href="#_connexion_à_la_base_de_données">2. Connexion à la Base de Données</a>
 <ul class="sectlevel2">
-<li><a href="#_installation">Installation</a></li>
-<li><a href="#_activation_de_pdo_dans_le_fichier_php_ini">Activation de PDO dans le fichier <code>php.ini</code></a></li>
+<li><a href="#_gestion_des_erreurs">2.1. Gestion des Erreurs</a></li>
 </ul>
 </li>
-<li><a href="#_3_connexion_à_la_base_de_données">3. Connexion à la Base de Données</a></li>
-<li><a href="#_4_gestion_des_erreurs">4. Gestion des Erreurs</a>
+<li><a href="#_exécution_de_requêtes">3. Exécution de Requêtes</a>
 <ul class="sectlevel2">
-<li><a href="#_4_1_mode_derreur">4.1 Mode d’Erreur</a></li>
-<li><a href="#_4_2_gestion_des_exceptions">4.2 Gestion des Exceptions</a></li>
+<li><a href="#_requêtes_simples">3.1. Requêtes Simples</a></li>
+<li><a href="#_requêtes_préparées">3.2. Requêtes Préparées</a></li>
+<li><a href="#_récupération_des_données">3.3. Récupération des Données</a></li>
 </ul>
 </li>
-<li><a href="#_5_exécution_de_requêtes">5. Exécution de Requêtes</a>
+<li><a href="#_binding_des_paramètres">4. Binding des Paramètres</a></li>
+<li><a href="#_prévention_des_injections_sql">5. Prévention des Injections SQL</a>
 <ul class="sectlevel2">
-<li><a href="#_5_1_requêtes_simples">5.1 Requêtes Simples</a></li>
-<li><a href="#_5_2_requêtes_préparées">5.2 Requêtes Préparées</a></li>
-<li><a href="#_5_4_récupération_des_données">5.4 Récupération des Données</a></li>
+<li><a href="#_quest_ce_que_linjection_sql">5.1. Qu&#8217;est-ce que l&#8217;Injection SQL ?</a></li>
+<li><a href="#_utilisation_des_requêtes_préparées_pour_prévenir_les_injections_sql">5.2. Utilisation des Requêtes Préparées pour Prévenir les Injections SQL</a></li>
+<li><a href="#_bonnes_pratiques_pour_éviter_les_injections_sql">5.3. Bonnes Pratiques pour Éviter les Injections SQL</a></li>
 </ul>
 </li>
-<li><a href="#_6_binding_des_paramètres">6. Binding des Paramètres</a></li>
-<li><a href="#_7_prévention_des_injections_sql">7. Prévention des Injections SQL</a>
+<li><a href="#_filtrage_et_assainissement_des_données">6. Filtrage et Assainissement des Données</a>
 <ul class="sectlevel2">
-<li><a href="#_7_1_quest_ce_que_linjection_sql">7.1 Qu&#8217;est-ce que l&#8217;Injection SQL ?</a></li>
-<li><a href="#_7_2_utilisation_des_requêtes_préparées_pour_prévenir_les_injections_sql">7.2 Utilisation des Requêtes Préparées pour Prévenir les Injections SQL</a></li>
-<li><a href="#_7_3_bonnes_pratiques_pour_éviter_les_injections_sql">7.3 Bonnes Pratiques pour Éviter les Injections SQL</a></li>
+<li><a href="#_filtrage_des_données">6.1. Filtrage des Données</a></li>
+<li><a href="#_assainissement_des_données">6.2. Assainissement des Données</a></li>
 </ul>
 </li>
-<li><a href="#_8_filtrage_et_assainissement_des_données">8. Filtrage et Assainissement des Données</a>
+<li><a href="#_exercices">7. Exercices</a>
 <ul class="sectlevel2">
-<li><a href="#_8_1_filtrage_des_données">8.1 Filtrage des Données</a></li>
-<li><a href="#_8_2_assainissement_des_données">8.2 Assainissement des Données</a></li>
-</ul>
-</li>
-<li><a href="#_9_exercices">9 Exercices</a>
-<ul class="sectlevel2">
-<li><a href="#_exercice_1">Exercice 1</a></li>
-<li><a href="#_exercice_2">Exercice 2</a></li>
-<li><a href="#_exercice_3">Exercice 3</a></li>
-<li><a href="#_exercice_4">Exercice 4</a></li>
-<li><a href="#_exercice_5">Exercice 5</a></li>
+<li><a href="#_exercice_1">7.1. Exercice 1</a></li>
+<li><a href="#_exercice_2">7.2. Exercice 2</a></li>
+<li><a href="#_exercice_3">7.3. Exercice 3</a></li>
+<li><a href="#_exercice_4">7.4. Exercice 4</a></li>
+<li><a href="#_exercice_5">7.5. Exercice 5</a></li>
 </ul>
 </li>
 </ul>
@@ -582,13 +575,13 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_1_introduction_à_pdo">1. Introduction à PDO</h2>
+<h2 id="_introduction_à_pdo">1. Introduction à PDO</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>PDO (PHP Data Objects) est une extension de PHP qui permet d&#8217;interagir avec différentes bases de données de manière sécurisée et abstraite. Elle offre une interface uniforme pour accéder à des bases de données, telles que MySQL, PostgreSQL, SQLite, etc.</p>
 </div>
 <div class="sect2">
-<h3 id="_avantages_de_pdo">Avantages de PDO</h3>
+<h3 id="_avantages_de_pdo">1.1. Avantages de PDO</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -603,19 +596,11 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </ul>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_2_installation_et_configuration">2. Installation et Configuration</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_installation">Installation</h3>
+<h3 id="_installation_et_configuration">1.2. Installation et Configuration</h3>
 <div class="paragraph">
 <p>PDO est généralement installé par défaut avec PHP. Vous pouvez vérifier si PDO est activé en exécutant <code>phpinfo()</code> dans un script PHP.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_activation_de_pdo_dans_le_fichier_php_ini">Activation de PDO dans le fichier <code>php.ini</code></h3>
 <div class="paragraph">
 <p>Assurez-vous que les lignes suivantes sont présentes et décommentées dans votre fichier <code>php.ini</code> :</p>
 </div>
@@ -629,7 +614,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_3_connexion_à_la_base_de_données">3. Connexion à la Base de Données</h2>
+<h2 id="_connexion_à_la_base_de_données">2. Connexion à la Base de Données</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>La syntaxe pour se connecter à une base de données avec PDO est la suivante :</p>
@@ -672,13 +657,10 @@ extension=pdo_pgsql</code></pre>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_4_gestion_des_erreurs">4. Gestion des Erreurs</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_4_1_mode_derreur">4.1 Mode d’Erreur</h3>
+<h3 id="_gestion_des_erreurs">2.1. Gestion des Erreurs</h3>
+<div class="sect3">
+<h4 id="_mode_derreur">2.1.1. Mode d’Erreur</h4>
 <div class="paragraph">
 <p>Le mode d&#8217;erreur peut être configuré avec <code>PDO::ATTR_ERRMODE</code>. Les modes disponibles sont :</p>
 </div>
@@ -701,8 +683,8 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_4_2_gestion_des_exceptions">4.2 Gestion des Exceptions</h3>
+<div class="sect3">
+<h4 id="_gestion_des_exceptions">2.1.2. Gestion des Exceptions</h4>
 <div class="paragraph">
 <p>Utilisez un bloc <code>try-catch</code> pour capturer les exceptions et gérer les erreurs de manière appropriée :</p>
 </div>
@@ -719,11 +701,12 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_5_exécution_de_requêtes">5. Exécution de Requêtes</h2>
+<h2 id="_exécution_de_requêtes">3. Exécution de Requêtes</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_5_1_requêtes_simples">5.1 Requêtes Simples</h3>
+<h3 id="_requêtes_simples">3.1. Requêtes Simples</h3>
 <div class="paragraph">
 <p>Pour exécuter des requêtes SQL simples (comme une requête SELECT) on utilise la méthode <code>query()</code>. Elle permet d&#8217;exécuter directement une requête SQL sans préparation préalable.</p>
 </div>
@@ -747,9 +730,9 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_5_2_requêtes_préparées">5.2 Requêtes Préparées</h3>
+<h3 id="_requêtes_préparées">3.2. Requêtes Préparées</h3>
 <div class="sect3">
-<h4 id="_selection_de_données">Selection de données</h4>
+<h4 id="_select">3.2.1. SELECT</h4>
 <div class="paragraph">
 <p>Les requêtes préparées sont recommandées pour éviter les injections SQL, car elles séparent le code SQL des données et assurent un échappement automatique des valeurs. Pour exécuter une requête préparée, on utilise la méthode <code>execute()</code>.</p>
 </div>
@@ -762,7 +745,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_insertion_de_données">Insertion de données</h4>
+<h4 id="_insert">3.2.2. INSERT</h4>
 <div class="paragraph">
 <p>L&#8217;instruction SQL suivante ajoute un nouvel utilisateur avec son nom et son email dans la base de données :</p>
 </div>
@@ -777,7 +760,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_suppression_de_données">Suppression de données</h4>
+<h4 id="_delete">3.2.3. DELETE</h4>
 <div class="paragraph">
 <p>L&#8217;exemple suivant montre comment supprimer un utilisateur de la table utilisateurs en se basant sur son id. Comme toujours, nous utilisons une requête préparée pour assurer une exécution sécurisée de la commande SQL.</p>
 </div>
@@ -792,7 +775,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_modification_de_données">Modification de données</h4>
+<h4 id="_update">3.2.4. UPDATE</h4>
 <div class="paragraph">
 <p>La requête UPDATE est utilisée pour mettre à jour les colonnes nom et email d&#8217;un utilisateur identifié par son id. L&#8217;utilisation des paramètres nommés dans la requête permet de lier les nouvelles valeurs en toute sécurité aux colonnes correspondantes dans la base de données.</p>
 </div>
@@ -808,7 +791,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_5_4_récupération_des_données">5.4 Récupération des Données</h3>
+<h3 id="_récupération_des_données">3.3. Récupération des Données</h3>
 <div class="paragraph">
 <p>Après l&#8217;exécution de la requête, vous pouvez récupérer les résultats à l&#8217;aide de méthodes comme <code>fetch()</code>, <code>fetchAll()</code>, ou <code>fetchColumn()</code>. Ces méthodes permettent de récupérer les données sous différentes formes (tableau associatif, tableau indexé, etc.).</p>
 </div>
@@ -839,7 +822,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_6_binding_des_paramètres">6. Binding des Paramètres</h2>
+<h2 id="_binding_des_paramètres">4. Binding des Paramètres</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Le binding des paramètres avec PDO est un moyen de lier des variables aux paramètres de la requête préparée de manière sécurisée.</p>
@@ -946,10 +929,10 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_7_prévention_des_injections_sql">7. Prévention des Injections SQL</h2>
+<h2 id="_prévention_des_injections_sql">5. Prévention des Injections SQL</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_7_1_quest_ce_que_linjection_sql">7.1 Qu&#8217;est-ce que l&#8217;Injection SQL ?</h3>
+<h3 id="_quest_ce_que_linjection_sql">5.1. Qu&#8217;est-ce que l&#8217;Injection SQL ?</h3>
 <div class="paragraph">
 <p>L&#8217;injection SQL est une attaque qui permet à un attaquant d&#8217;exécuter des commandes SQL malveillantes en exploitant des vulnérabilités dans les requêtes SQL d&#8217;une application. Cela peut conduire à la divulgation de données sensibles, à la manipulation ou à la suppression de données.</p>
 </div>
@@ -980,7 +963,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_7_2_utilisation_des_requêtes_préparées_pour_prévenir_les_injections_sql">7.2 Utilisation des Requêtes Préparées pour Prévenir les Injections SQL</h3>
+<h3 id="_utilisation_des_requêtes_préparées_pour_prévenir_les_injections_sql">5.2. Utilisation des Requêtes Préparées pour Prévenir les Injections SQL</h3>
 <div class="paragraph">
 <p>Les requêtes préparées séparent le code SQL des données, ce qui empêche les données de manipuler la structure de la requête SQL. Cela permet de protéger contre les injections SQL.</p>
 </div>
@@ -995,7 +978,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_explication">Explication</h4>
+<h4 id="_explication">5.2.1. Explication</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1009,7 +992,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_7_3_bonnes_pratiques_pour_éviter_les_injections_sql">7.3 Bonnes Pratiques pour Éviter les Injections SQL</h3>
+<h3 id="_bonnes_pratiques_pour_éviter_les_injections_sql">5.3. Bonnes Pratiques pour Éviter les Injections SQL</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1054,7 +1037,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_8_filtrage_et_assainissement_des_données">8. Filtrage et Assainissement des Données</h2>
+<h2 id="_filtrage_et_assainissement_des_données">6. Filtrage et Assainissement des Données</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Les filtres et les assainissements jouent un rôle complémentaire à celui des requêtes préparées en assurant la sécurité des données à différents niveaux.</p>
@@ -1070,7 +1053,7 @@ extension=pdo_pgsql</code></pre>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_8_1_filtrage_des_données">8.1 Filtrage des Données</h3>
+<h3 id="_filtrage_des_données">6.1. Filtrage des Données</h3>
 <div class="paragraph">
 <p>PHP offre des filtres intégrés pour valider les données :</p>
 </div>
@@ -1105,7 +1088,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_8_2_assainissement_des_données">8.2 Assainissement des Données</h3>
+<h3 id="_assainissement_des_données">6.2. Assainissement des Données</h3>
 <div class="paragraph">
 <p>L&#8217;assainissement assure que les données sont nettoyées pour éviter les attaques telles que les XSS (Un attaquant injecte du code JavaScript ou HTML dans une page web que d&#8217;autres utilisateurs vont visualiser).</p>
 </div>
@@ -1125,7 +1108,7 @@ extension=pdo_pgsql</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_9_exercices">9 Exercices</h2>
+<h2 id="_exercices">7. Exercices</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Soit la base de données nommée <code>formation</code> stockée sur le serveur <code>bdd.domelec.com</code>.<br>
@@ -1140,7 +1123,7 @@ Pour accéder à la base de données, vous avez le login <code>domAppli</code> e
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exercice_1">Exercice 1</h3>
+<h3 id="_exercice_1">7.1. Exercice 1</h3>
 <div class="paragraph">
 <p>Ecrire la page de connexion à la base de données avec PHP et PDO
 Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.</p>
@@ -1167,7 +1150,7 @@ Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exercice_2">Exercice 2</h3>
+<h3 id="_exercice_2">7.2. Exercice 2</h3>
 <div class="paragraph">
 <p>Ecrire le code pour récupérer toutes les formations dans le tableau $formations</p>
 </div>
@@ -1191,7 +1174,7 @@ Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exercice_3">Exercice 3</h3>
+<h3 id="_exercice_3">7.3. Exercice 3</h3>
 <div class="paragraph">
 <p>Ecrire le code pour ajouter une demande de formation. Le salarié concerné a pour matricule <code>9011</code> et le code formation est <code>DEVWEB002</code>.
 Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.</p>
@@ -1220,7 +1203,7 @@ Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exercice_4">Exercice 4</h3>
+<h3 id="_exercice_4">7.4. Exercice 4</h3>
 <div class="paragraph">
 <p>Ecrire le code pour mettre à jour la demande de formation du matricule 9011. Le superviseur a donné un avis favorable.
 Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.</p>
@@ -1249,7 +1232,7 @@ Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_exercice_5">Exercice 5</h3>
+<h3 id="_exercice_5">7.5. Exercice 5</h3>
 <div class="paragraph">
 <p>Ecrire le code pour supprimer la demande de formation <code>DEVCSHARP</code> du matricule <code>5011</code>. Celui-ci souhaite se rétracter.
 Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.</p>
@@ -1283,7 +1266,7 @@ Un message est affiché si l&#8217;opération a échouée ou si elle a réussie.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-09-25 16:48:24 +0200
+Last updated 2024-11-01 08:17:17 +0100
 </div>
 </div>
 </body>
